@@ -6,7 +6,7 @@
 package perpustakaan;
 
 
-//tes clar
+
 
 public class Buku {
     
