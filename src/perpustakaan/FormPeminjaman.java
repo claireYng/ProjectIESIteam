@@ -26,7 +26,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
         Object[] kolom = {"Judul"};
         DefaultTableModel model = new DefaultTableModel(kolom, 0);
         
-        for(Buku buku : bukuList) {
+        for(Buku Buku : bukuList) {
             Object[] baris = { buku.judulBuku };
             model.addRow(baris);
         }
@@ -76,12 +76,12 @@ public class FormPeminjaman extends javax.swing.JFrame {
         tombolKonfirmasi.setText("konfirmasi");
         tombolKonfirmasi.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                konfirmasiMouseClicked(evt);
+                tombolKonfirmasiMouseClicked(evt);
             }
         });
         tombolKonfirmasi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                konfirmasiActionPerformed(evt);
+                tombolKonfirmasiActionPerformed(evt);
             }
         });
 
@@ -157,7 +157,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(konfirmasi))
+                        .addComponent(tombolKonfirmasi))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
@@ -199,7 +199,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(hapusBuku)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(konfirmasi)
+                .addComponent(tombolKonfirmasi)
                 .addContainerGap(55, Short.MAX_VALUE))
         );
 
@@ -210,7 +210,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_judulActionPerformed
 
-    private void konfirmasiActionPerformed(java.awt.event.ActionEvent evt) {
+    private void tombolKonfirmasiActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
@@ -218,7 +218,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
         // TODO add your handling code here:
     }
 
-    private void konfirmasiMouseClicked(java.awt.event.MouseEvent evt) {
+    private void tombolKonfirmasiMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) daftarPinjaman.getModel();
         if(daftarPinjaman.getRowCount() <= 10){
@@ -227,15 +227,15 @@ public class FormPeminjaman extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(this, "Jumlah buku melebihi batas (maks.10)");
         }
-    }//GEN-LAST:event_konfirmasiMouseClicked
+    }
 
     private void tombolCariMouseClicked(java.awt.event.MouseEvent evt) {
         // TODO add your handling code here:
-       String Judul = judul.getText();
+       String Judul = judulBuku.getText();
        Perpustakaan.controllerPeminjaman.cariBuku(Judul);
     }
 
-    private void pinjamActionPerformed(java.awt.event.ActionEvent evt) {
+    private void tombolPinjamActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }
 
