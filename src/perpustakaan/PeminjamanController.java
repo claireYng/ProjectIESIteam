@@ -10,7 +10,7 @@ public class PeminjamanController {
     public void cariBuku(String judul){
 
     }
-    public void pinjam (ArrayList<BukuDipinjam){
+    public void pinjam (BukuDipinjam[]){
 
     }
 }
