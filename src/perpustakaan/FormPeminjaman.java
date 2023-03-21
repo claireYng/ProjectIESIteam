@@ -27,7 +27,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
         DefaultTableModel model = new DefaultTableModel(kolom, 0);
         
         for(Buku buku : bukuList) {
-            Object[] baris = { buku.judul };
+            Object[] baris = { buku.judulBuku };
             model.addRow(baris);
         }
         
@@ -206,7 +206,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void judulActionPerformed(java.awt.event.ActionEvent evt) {
+    private void judulBukuActionPerformed(java.awt.event.ActionEvent evt) {
         // TODO add your handling code here:
     }//GEN-LAST:event_judulActionPerformed
 
