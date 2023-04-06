@@ -8,11 +8,11 @@ package perpustakaan;
 import java.awt.Dialog;
 import java.util.ArrayList;
 
-public class peminjamanController {
+public class PeminjamanController {
     
     public void showFormPeminjaman() {
         Perpustakaan.formPeminjaman = new FormPeminjaman();
-        Perpustakaan.formPeminjaman.tampilkan(); 
+        Perpustakaan.formPeminjaman.show(); 
     }
     
     public void cariBuku(String judul) {
@@ -26,7 +26,7 @@ public class peminjamanController {
                 dialogUI.setLocationRelativeTo(null);
                 dialogUI.setVisible(true);
             } 
-            else Perpustakaan.formPeminjaman.display(listBuku);
+            else Perpustakaan.formPeminjaman.tampilPinjaman(listBuku);
         } catch(Exception ex) {
             DialogUI dialogUI = new DialogUI("Connection Error");
             dialogUI.pack();
@@ -36,3 +36,6 @@ public class peminjamanController {
     }
     
 }
+
+
+

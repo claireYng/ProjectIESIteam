@@ -65,8 +65,8 @@
                       </Group>
                       <EmptySpace min="-2" pref="40" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="pinjam" max="32767" attributes="0"/>
-                          <Component id="hapus" max="32767" attributes="0"/>
+                          <Component id="tombolPinjam" max="32767" attributes="0"/>
+                          <Component id="tombolBatal" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
@@ -101,9 +101,9 @@
                   </Group>
                   <Group type="102" alignment="0" attributes="0">
                       <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                      <Component id="pinjam" min="-2" max="-2" attributes="0"/>
+                      <Component id="tombolPinjam" min="-2" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Component id="hapus" min="-2" max="-2" attributes="0"/>
+                      <Component id="tombolBatal" min="-2" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
@@ -207,22 +207,22 @@
         </Component>
       </SubComponents>
     </Container>
-    <Component class="javax.swing.JButton" name="pinjam">
+    <Component class="javax.swing.JButton" name="tombolPinjam">
       <Properties>
-        <Property name="text" type="java.lang.String" value="pinjam"/>
+        <Property name="text" type="java.lang.String" value="tombolPinjam"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="pinjamMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="pinjamActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tombolPinjamMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tombolPinjamActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="hapus">
+    <Component class="javax.swing.JButton" name="tombolBatal">
       <Properties>
-        <Property name="text" type="java.lang.String" value="hapus"/>
+        <Property name="text" type="java.lang.String" value="tombolBatal"/>
       </Properties>
       <Events>
-        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="hapusMouseClicked"/>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="hapusActionPerformed"/>
+        <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tombolBatalMouseClicked"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tombolBatalActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

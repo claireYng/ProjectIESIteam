@@ -19,7 +19,7 @@ public class FormPencarian extends javax.swing.JFrame {
         initComponents();
     }
     
-    public void tampilkan() {
+    public void show() {
         this.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         this.pack();
         this.setLocationRelativeTo(null);

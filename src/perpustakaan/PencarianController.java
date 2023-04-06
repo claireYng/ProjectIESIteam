@@ -13,7 +13,7 @@ public class PencarianController {
     
     public void showFormPencarian() {
         Perpustakaan.formPencarian = new FormPencarian();
-        Perpustakaan.formPencarian.tampilkan(); 
+        Perpustakaan.formPencarian.show(); 
     }
     
     public void cariBuku(String judul) {

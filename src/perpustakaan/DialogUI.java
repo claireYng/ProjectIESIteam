@@ -73,15 +73,14 @@ public class DialogUI extends javax.swing.JFrame {
         );
 
         pack();
-    }// </editor-fold>//GEN-END:initComponents
+    }
 
-    private void jButtonOKMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButtonOKMouseClicked
+    private void jButtonOKMouseClicked(java.awt.event.MouseEvent evt) {
         this.setVisible(false);
-    }//GEN-LAST:event_jButtonOKMouseClicked
+    }
 
 
-    // Variables declaration - do not modify//GEN-BEGIN:variables
+
     private javax.swing.JButton jButtonOK;
     private javax.swing.JLabel jLabelMessage;
-    // End of variables declaration//GEN-END:variables
 }

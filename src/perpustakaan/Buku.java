@@ -5,9 +5,6 @@
  */
 package perpustakaan;
 
-
-
-
 public class Buku {
     
     public String judul;
@@ -17,3 +14,4 @@ public class Buku {
     }
     
 }
+//done
