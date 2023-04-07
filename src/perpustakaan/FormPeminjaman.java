@@ -55,16 +55,18 @@ public class FormPeminjaman extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         jTable2 = new javax.swing.JTable();
         judul = new javax.swing.JTextField();
-        konfirmasi = new javax.swing.JButton();
-        cari = new javax.swing.JButton();
+        btnKonfirmasi = new javax.swing.JButton();
+        btnCari = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        daftarPeminjaman = new javax.swing.JTable();
+        daftarPinjaman = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
         daftarBuku = new javax.swing.JTable();
         pinjam = new javax.swing.JButton();
         btnBatal = new javax.swing.JButton();
+        jLabel1 = new javax.swing.JLabel();
+        lama = new javax.swing.JTextField();
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -87,27 +89,27 @@ public class FormPeminjaman extends javax.swing.JFrame {
             }
         });
 
-        konfirmasi.setText("konfirmasi");
-        konfirmasi.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnKonfirmasi.setText("Konfirmasi");
+        btnKonfirmasi.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                konfirmasiMouseClicked(evt);
+                btnKonfirmasiMouseClicked(evt);
             }
         });
-        konfirmasi.addActionListener(new java.awt.event.ActionListener() {
+        btnKonfirmasi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                konfirmasiActionPerformed(evt);
+                btnKonfirmasiActionPerformed(evt);
             }
         });
 
-        cari.setText("cari");
-        cari.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnCari.setText("Cari");
+        btnCari.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                cariMouseClicked(evt);
+                btnCariMouseClicked(evt);
             }
         });
-        cari.addActionListener(new java.awt.event.ActionListener() {
+        btnCari.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cariActionPerformed(evt);
+                btnCariActionPerformed(evt);
             }
         });
 
@@ -137,6 +139,14 @@ public class FormPeminjaman extends javax.swing.JFrame {
             }
         ));
         jScrollPane3.setViewportView(daftarBuku);
+
+        jLabel1.setText("Lama Pinjam");
+
+        lama.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lamaActionPerformed(evt);
+            }
+        });
 
         pinjam.setText("Pinjam");
         pinjam.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -171,12 +181,12 @@ public class FormPeminjaman extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(konfirmasi))
+                        .addComponent(btnKonfirmasi))
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
                                 .addGap(72, 72, 72)
-                                .addComponent(cari, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(btnCari, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jLabel3)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(judul, javax.swing.GroupLayout.DEFAULT_SIZE, 289, Short.MAX_VALUE))
@@ -187,7 +197,10 @@ public class FormPeminjaman extends javax.swing.JFrame {
                         .addGap(43, 43, 43)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4))))
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel1) //entah
+                                .addGap(18, 18, 18)
+                                .addComponent(lama, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))) //entah
                 .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
@@ -196,7 +209,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(judul, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(cari)
+                .addComponent(btnCari)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(24, 24, 24)
@@ -211,9 +224,14 @@ public class FormPeminjaman extends javax.swing.JFrame {
                         .addGap(81, 81, 81)
                         .addComponent(pinjam)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnBatal)))
+                        .addComponent(btnBatal))
+                    .addGroup(layout.createSequentialGroup() //ntah
+                        .addGap(30, 30, 30)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel1)))) //ntah
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(konfirmasi)
+                .addComponent(btnKonfirmasi)
                 .addContainerGap(55, Short.MAX_VALUE))
         );
 
@@ -223,16 +241,18 @@ public class FormPeminjaman extends javax.swing.JFrame {
     private void judulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_judulActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_judulActionPerformed
-
-    private void konfirmasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_konfirmasiActionPerformed
+    private void lamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamaActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_konfirmasiActionPerformed
-
-    private void cariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cariActionPerformed
+    }//GEN-LAST:event_lamaActionPerformed
+    private void btnKonfirmasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKonfirmasiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cariActionPerformed
+    }//GEN-LAST:event_btnKonfirmasiActionPerformed
 
-    private void konfirmasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_konfirmasiMouseClicked
+    private void btnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCariActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnCariActionPerformed
+
+    private void btnKonfirmasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnKonfirmasiMouseClicked
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) daftarPinjaman.getModel();
         if(daftarPinjaman.getRowCount() <= 10){
@@ -241,13 +261,13 @@ public class FormPeminjaman extends javax.swing.JFrame {
         else{
             JOptionPane.showMessageDialog(this, "Jumlah buku yang dipinjam melebihi batas maks (10)");
         }
-    }//GEN-LAST:event_konfirmasiMouseClicked
+    }//GEN-LAST:event_btnKonfirmasiMouseClicked
 
-    private void cariMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cariMouseClicked
+    private void btnCariMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCariMouseClicked
         // TODO add your handling code here:
        String Judul = judul.getText();
        Perpustakaan.controllerPeminjaman.cariBuku(Judul);
-    }//GEN-LAST:event_cariMouseClicked
+    }//GEN-LAST:event_btnCariMouseClicked
 
     private void pinjamActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pinjamActionPerformed
         // TODO add your handling code here:
@@ -266,8 +286,46 @@ public class FormPeminjaman extends javax.swing.JFrame {
     private void btnBatalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBatalMouseClicked
         // TODO add your handling code here:
         DefaultTableModel model = (DefaultTableModel) daftarPinjaman.getModel();
-        model.removeRow(daftarPinjaman.getSelectedRow());
+        model.removeRow(daftarPinjaman.getSelectedRow());}
+
+    private void tombolKonfirmasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tombolKonfirmasiMouseClicked
+        DefaultTableModel model = (DefaultTableModel) daftarPinjaman.getModel();
+        String LamaPinjam = lama.getText();
+
+        for (int i=0 ; i<1 ; i++) {
+            if(LamaPinjam.equals("3")){
+                if(daftarPinjaman.getRowCount() <= 10){
+                    JOptionPane.showMessageDialog(this, "Peminjaman telah dikonfirmasi");
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "Jumlah buku yang dipinjam melebihi batas maksimal 10 buku");
+                } break;
+            }
+            if(LamaPinjam.equals("2")){
+                if(daftarPinjaman.getRowCount() <= 10){
+                    JOptionPane.showMessageDialog(this, "Peminjaman telah dikonfirmasi");
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "Jumlah buku yang dipinjam melebihi batas maksimal 10 buku");
+                } break;
+            }
+            if(LamaPinjam.equals("1")){
+                if(daftarPinjaman.getRowCount() <= 10){
+                    JOptionPane.showMessageDialog(this, "Peminjaman telah dikonfirmasi");
+                }
+                else{
+                    JOptionPane.showMessageDialog(this, "Jumlah buku yang dipinjam melebihi batas maksimal 10 buku");
+                } break;
+            }
+            else{
+                JOptionPane.showMessageDialog(this, "Lama waktu peminjaman maksimal adalah 3 hari");
+            }
+            i++;
+        }
     }//GEN-LAST:event_btnBatalMouseClicked
+
+    
+    
 
     /**
      * @param args the command line arguments
@@ -306,7 +364,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnBatal;
-    private javax.swing.JButton cari;
+    private javax.swing.JButton btnCari;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JScrollPane jScrollPane1;
@@ -314,9 +372,11 @@ public class FormPeminjaman extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JTable jTable2;
     private javax.swing.JTextField judul;
-    private javax.swing.JButton konfirmasi;
+    private javax.swing.JButton btnKonfirmasi;
     private javax.swing.JButton pinjam;
     private javax.swing.JTable daftarBuku;
     private javax.swing.JTable daftarPinjaman;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JTextField lama;
     // End of variables declaration//GEN-END:variables
 }
