@@ -40,7 +40,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
             model.addRow(baris);
         }
         
-        tabelBuku.setModel(model);
+        daftarBuku.setModel(model);
     }
     
     /**
@@ -58,13 +58,13 @@ public class FormPeminjaman extends javax.swing.JFrame {
         konfirmasi = new javax.swing.JButton();
         cari = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        tabelPeminjaman = new javax.swing.JTable();
+        daftarPeminjaman = new javax.swing.JTable();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane3 = new javax.swing.JScrollPane();
-        tabelBuku = new javax.swing.JTable();
+        daftarBuku = new javax.swing.JTable();
         pinjam = new javax.swing.JButton();
-        batal = new javax.swing.JButton();
+        btnBatal = new javax.swing.JButton();
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -111,7 +111,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
             }
         });
 
-        tabelPeminjaman.setModel(new javax.swing.table.DefaultTableModel(
+        daftarPinjaman.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
 
             },
@@ -119,13 +119,13 @@ public class FormPeminjaman extends javax.swing.JFrame {
                 "Judul"
             }
         ));
-        jScrollPane1.setViewportView(tabelPeminjaman);
+        jScrollPane1.setViewportView(daftarPinjaman);
 
         jLabel3.setText("Tabel Peminjaman");
 
         jLabel4.setText("Tabel Buku");
 
-        tabelBuku.setModel(new javax.swing.table.DefaultTableModel(
+        daftarBuku.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null},
                 {null},
@@ -136,9 +136,9 @@ public class FormPeminjaman extends javax.swing.JFrame {
                 "Judul"
             }
         ));
-        jScrollPane3.setViewportView(tabelBuku);
+        jScrollPane3.setViewportView(daftarBuku);
 
-        pinjam.setText("pinjam");
+        pinjam.setText("Pinjam");
         pinjam.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 pinjamMouseClicked(evt);
@@ -150,15 +150,15 @@ public class FormPeminjaman extends javax.swing.JFrame {
             }
         });
 
-        batal.setText("batal");
-        batal.addMouseListener(new java.awt.event.MouseAdapter() {
+        btnBatal.setText("Batal");
+        btnBatal.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                batalMouseClicked(evt);
+                btnBatalMouseClicked(evt);
             }
         });
-        batal.addActionListener(new java.awt.event.ActionListener() {
+        btnBatal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                batalActionPerformed(evt);
+                btnBatalActionPerformed(evt);
             }
         });
 
@@ -183,7 +183,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
                         .addGap(40, 40, 40)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addComponent(pinjam, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(batal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(btnBatal, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addGap(43, 43, 43)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -211,7 +211,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
                         .addGap(81, 81, 81)
                         .addComponent(pinjam)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(batal)))
+                        .addComponent(btnBatal)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(konfirmasi)
                 .addContainerGap(55, Short.MAX_VALUE))
@@ -234,12 +234,12 @@ public class FormPeminjaman extends javax.swing.JFrame {
 
     private void konfirmasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_konfirmasiMouseClicked
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) tabelPeminjaman.getModel();
-        if(tabelPeminjaman.getRowCount() <= 10){
-            JOptionPane.showMessageDialog(this, "Peminjaman telah dikonfirmasi");
+        DefaultTableModel model = (DefaultTableModel) daftarPinjaman.getModel();
+        if(daftarPinjaman.getRowCount() <= 10){
+            JOptionPane.showMessageDialog(this, "Peminjaman terkonfirmasi");
         }
         else{
-            JOptionPane.showMessageDialog(this, "Jumlah buku yang dipinjam melebihi batas maksimal 10 buku");
+            JOptionPane.showMessageDialog(this, "Jumlah buku yang dipinjam melebihi batas maks (10)");
         }
     }//GEN-LAST:event_konfirmasiMouseClicked
 
@@ -253,21 +253,21 @@ public class FormPeminjaman extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_pinjamActionPerformed
 
-    private void batalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_batalActionPerformed
+    private void btnBatalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBatalActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_batalActionPerformed
+    }//GEN-LAST:event_btnBatalActionPerformed
 
     private void pinjamMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pinjamMouseClicked
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) tabelPeminjaman.getModel();
-        model.addRow(new Object[]{tabelBuku.getValueAt(tabelBuku.getSelectedRow(), tabelBuku.getSelectedColumn())});
+        DefaultTableModel model = (DefaultTableModel) daftarPinjaman.getModel();
+        model.addRow(new Object[]{daftarBuku.getValueAt(daftarBuku.getSelectedRow(), daftarBuku.getSelectedColumn())});
     }//GEN-LAST:event_pinjamMouseClicked
 
-    private void batalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_batalMouseClicked
+    private void btnBatalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnBatalMouseClicked
         // TODO add your handling code here:
-        DefaultTableModel model = (DefaultTableModel) tabelPeminjaman.getModel();
-        model.removeRow(tabelPeminjaman.getSelectedRow());
-    }//GEN-LAST:event_batalMouseClicked
+        DefaultTableModel model = (DefaultTableModel) daftarPinjaman.getModel();
+        model.removeRow(daftarPinjaman.getSelectedRow());
+    }//GEN-LAST:event_btnBatalMouseClicked
 
     /**
      * @param args the command line arguments
@@ -305,7 +305,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton batal;
+    private javax.swing.JButton btnBatal;
     private javax.swing.JButton cari;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -316,7 +316,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
     private javax.swing.JTextField judul;
     private javax.swing.JButton konfirmasi;
     private javax.swing.JButton pinjam;
-    private javax.swing.JTable tabelBuku;
-    private javax.swing.JTable tabelPeminjaman;
+    private javax.swing.JTable daftarBuku;
+    private javax.swing.JTable daftarPinjaman;
     // End of variables declaration//GEN-END:variables
 }
