@@ -65,8 +65,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
         daftarBuku = new javax.swing.JTable();
         pinjam = new javax.swing.JButton();
         btnBatal = new javax.swing.JButton();
-        jLabel1 = new javax.swing.JLabel();
-        lama = new javax.swing.JTextField();
+
 
         jTable2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -140,14 +139,6 @@ public class FormPeminjaman extends javax.swing.JFrame {
         ));
         jScrollPane3.setViewportView(daftarBuku);
 
-        jLabel1.setText("Lama Pinjam");
-
-        lama.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                lamaActionPerformed(evt);
-            }
-        });
-
         pinjam.setText("Pinjam");
         pinjam.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -197,10 +188,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
                         .addGap(43, 43, 43)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel1) //entah
-                                .addGap(18, 18, 18)
-                                .addComponent(lama, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE)))) //entah
+                            .addComponent(jLabel4)))) 
                 .addGap(25, 25, 25))
         );
         layout.setVerticalGroup(
@@ -224,12 +212,7 @@ public class FormPeminjaman extends javax.swing.JFrame {
                         .addGap(81, 81, 81)
                         .addComponent(pinjam)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(btnBatal))
-                    .addGroup(layout.createSequentialGroup() //ntah
-                        .addGap(30, 30, 30)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(lama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel1)))) //ntah
+                        .addComponent(btnBatal))) 
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnKonfirmasi)
                 .addContainerGap(55, Short.MAX_VALUE))
@@ -241,9 +224,6 @@ public class FormPeminjaman extends javax.swing.JFrame {
     private void judulActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_judulActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_judulActionPerformed
-    private void lamaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lamaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_lamaActionPerformed
     private void btnKonfirmasiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKonfirmasiActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnKonfirmasiActionPerformed
@@ -290,38 +270,6 @@ public class FormPeminjaman extends javax.swing.JFrame {
 
     private void tombolKonfirmasiMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tombolKonfirmasiMouseClicked
         DefaultTableModel model = (DefaultTableModel) daftarPinjaman.getModel();
-        String LamaPinjam = lama.getText();
-
-        for (int i=0 ; i<1 ; i++) {
-            if(LamaPinjam.equals("3")){
-                if(daftarPinjaman.getRowCount() <= 10){
-                    JOptionPane.showMessageDialog(this, "Peminjaman telah dikonfirmasi");
-                }
-                else{
-                    JOptionPane.showMessageDialog(this, "Jumlah buku yang dipinjam melebihi batas maksimal 10 buku");
-                } break;
-            }
-            if(LamaPinjam.equals("2")){
-                if(daftarPinjaman.getRowCount() <= 10){
-                    JOptionPane.showMessageDialog(this, "Peminjaman telah dikonfirmasi");
-                }
-                else{
-                    JOptionPane.showMessageDialog(this, "Jumlah buku yang dipinjam melebihi batas maksimal 10 buku");
-                } break;
-            }
-            if(LamaPinjam.equals("1")){
-                if(daftarPinjaman.getRowCount() <= 10){
-                    JOptionPane.showMessageDialog(this, "Peminjaman telah dikonfirmasi");
-                }
-                else{
-                    JOptionPane.showMessageDialog(this, "Jumlah buku yang dipinjam melebihi batas maksimal 10 buku");
-                } break;
-            }
-            else{
-                JOptionPane.showMessageDialog(this, "Lama waktu peminjaman maksimal adalah 3 hari");
-            }
-            i++;
-        }
     }//GEN-LAST:event_btnBatalMouseClicked
 
     
@@ -376,7 +324,5 @@ public class FormPeminjaman extends javax.swing.JFrame {
     private javax.swing.JButton pinjam;
     private javax.swing.JTable daftarBuku;
     private javax.swing.JTable daftarPinjaman;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JTextField lama;
     // End of variables declaration//GEN-END:variables
 }
